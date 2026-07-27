@@ -7,14 +7,14 @@ This project uses [multicolor](https://github.com/jmoleiro/multicolor), to outpu
 ## Install
 
 ```bash
-npm install app-params
+npm install @j_moleiro/app-params
 ```
 
 ## Usage
 
 ```js
 var exit = require('process').exit;
-const app = require('../index.js')({
+const app = require('@j_moleiro/app-params')({
   name: 'My App',
   version: '1.0.0',
   description: 'Does something useful',
