@@ -1,0 +1,27 @@
+{
+  "name": "@j_moleiro/app-params",
+  "version": "1.0.1",
+  "description": "CLI parameter parsing utility for Node.js applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "cli",
+    "params",
+    "arguments",
+    "parser"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@j_moleiro/multicolor": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmoleiro/app-params.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmoleiro/app-params/issues"
+  },
+  "homepage": "https://github.com/jmoleiro/app-params#readme"
+}
