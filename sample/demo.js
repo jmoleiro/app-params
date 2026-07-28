@@ -1,10 +1,14 @@
 var exit = require('process').exit;
-const app = require('@j_moleiro/app-params')({
+const app = require("@j_moleiro/app-params")({
   name: 'My App',
   version: '1.0.0',
   description: 'Does something useful',
   usage: 'my-app [options]',
   no_auto_print_help: false,
+  color_scheme: {
+      application_name: ['blueBright', 'bold'],
+      application_version: ['green', 'underline']
+  },
   params_template: [
     {
       slug: 'addon',

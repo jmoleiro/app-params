@@ -1,6 +1,6 @@
 {
   "name": "@j_moleiro/app-params",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI parameter parsing utility for Node.js applications",
   "main": "index.js",
   "scripts": {

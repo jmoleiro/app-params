@@ -20,6 +20,10 @@ const app = require('@j_moleiro/app-params')({
   description: 'Does something useful',
   usage: 'my-app [options]',
   no_auto_print_help: false,
+  color_scheme:{
+      application_name: ['blueBright', 'bold'],
+      application_version: ['green', 'underline']
+  },
   params_template: [
     {
       slug: 'addon',
@@ -80,7 +84,26 @@ if (app.valid_param_count() === 0)
 |description|`string`|Application description|
 |usage|`string`|String explaining the basic commandline usage|
 |no_auto_print_help|`bool`|Indicates if the app disables the automatic print help and exit behaviour if no parameters where provided.|
+|color_scheme|`array`|Each possible entry contains an array of the available color modifiers available.Check the [Color Scheme parameters](#color-scheme-parameters) for a complete list of entries expected.|
 |params_template|`array`|Array of parameters templates. See the  table for [Params Template](#params-template), for a comprehensive list of values|
+
+
+## Color Scheme parameters
+
+You can replace the default values by adding one of the following entries.
+
+|Name|Usage|Default|
+|-|-|-|
+|`application_name`|Color for the application name|`['blue', 'bold']`|
+|`application_version`|Color for the application version|`['green']`|
+|`label`|Used for labels|`['blue']`|
+|`usage`|Used for the usage instructions|`['bold']`|
+|`param_name`|Used to display the parameter name|`['yellow']`|
+|`param_extra`|Used to display parameters extra information|`['bold']`|
+|`error`|Used to display errors|`['red', 'bold']`|
+|`error_extra`|Used to display error's extra information|`['bold']`|
+
+These color modifiers allowed can be reviewed [multicolor](https://github.com/jmoleiro/multicolor#color-scheme-parameters) documentation.
 
 ## Params Template
 
