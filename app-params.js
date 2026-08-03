@@ -34,7 +34,7 @@ var get_color_scheme = function(color_scheme, application = {}){
        }
        application = app_config;
     }
-    if (application.color_scheme[color_scheme] !== undefined){
+    if (application.color_scheme != undefined && application.color_scheme[color_scheme] !== undefined){
         color_scheme_values = application.color_scheme[color_scheme];
     } else {
         if (default_colors[color_scheme] !== undefined){
