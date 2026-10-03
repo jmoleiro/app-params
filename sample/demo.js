@@ -4,11 +4,19 @@ const app = require("@j_moleiro/app-params")({
   version: '1.0.0',
   description: 'Does something useful',
   usage: 'my-app [options]',
-  no_auto_print_help: false,
+  disable_auto_print_help: false,
   color_scheme: {
       application_name: ['blueBright', 'bold'],
       application_version: ['green', 'underline']
   },
+  show_app_logo: true,
+  app_logo: [
+  '  __  __        _             ',
+  ' |  \/  |_  _  /_\  _ __ _ __ ',
+  ' | |\/| | || |/ _ \| \'_ \ \'_ \ ',
+  ' |_|  |_|\_, /_/ \_\ .__/ .__/',
+  '         |__/      |_|  |_|       '
+  ],  
   params_template: [
     {
       slug: 'addon',

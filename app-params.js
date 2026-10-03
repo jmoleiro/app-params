@@ -4,6 +4,7 @@ var app_config = {};
 const multicolor = require('@j_moleiro/multicolor');
 
 var default_colors = {
+      logo_color: ['cyan', 'bold'],
       application_name: ['blue', 'bold'],
       application_version: ['green'],
       label: ['blue'],
@@ -137,11 +138,16 @@ function print_app(application = {}){
          console.log(multicolor("Application configuration not available.", get_color_scheme('error')));
          exit(-1);
    }
-//    console.log(chalk.blue.bold(application.name || "Application"));
+   if (application.show_app_logo && application.app_logo !== undefined && application.app_logo.length > 0) {
+       application.app_logo.forEach((line) => {
+           console.log(multicolor(line, get_color_scheme('logo_color')));
+       });
+       console.log('');
+   }
    console.log(multicolor(multicolor(application.name || "Application", get_color_scheme('application_name')) + ' ' + multicolor(('v' + application.version || ""), get_color_scheme('application_version')) + '\n'));
 }
 
-function print_help(application = {}){    
+function print_help(application = {}) {
     if (Object.keys(application).length === 0){
        if (app_config === undefined){   
           app_config = {}
@@ -152,6 +158,12 @@ function print_help(application = {}){
          console.log(multicolor("Application configuration not available.", get_color_scheme('error')));
          exit(-1);
     }    
+    if (application.show_app_logo && application.app_logo !== undefined && application.app_logo.length > 0) {
+        application.app_logo.forEach((line) => {
+            console.log(multicolor(line, get_color_scheme('logo_color')));
+        });
+        console.log('');
+    }
     console.log(multicolor(application.name || "Application", get_color_scheme('application_name')) + ' ' + multicolor(('v' + application.version || ""), get_color_scheme('application_version')) + '\n');
     console.log((application.description || "Description not available.") + '\n');
     if (application.usage !== undefined && application.usage !== '') {
@@ -299,7 +311,7 @@ var print_invalid_params = function(template_args = {}, application = {}) {
 
 module.exports = function (config) {
     app_config = config || {};
-    if ((param_count() == 0) && (app_config.auto_print_help != undefined) && (app_config.auto_print_help == true)) {
+    if ((param_count() == 0) && (app_config.disable_auto_print_help != undefined) && (app_config.disable_auto_print_help == false)) {
         print_help();
         exit();
     }
